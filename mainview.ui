@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_view</class>
+ <widget class="QMainWindow" name="main_view">
+
+  <widget class="QSplitter" name="main_splitter">
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+
+   <widget class="QWidget">
+    <layout class="QVBoxLayout">
+     <item>
+      <widget class="widgets::ComboBox" name="folders_list"/>
+     </item>
+     <item>
+      <widget class="QListView" name="messages_list">
+       <property name="resizeMode">
+        <enum>QListView::Adjust</enum>
+       </property>
+       <property name="uniformItemSizes">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+
+   <widget class="QWidget">
+    <layout class="QVBoxLayout">
+     <item>
+      <!--widget class="QTextBrowser" name="message_viewer"/-->
+      <widget class="widgets::MessageWidget" name="message_viewer"/>
+     </item>
+     <item>
+      <widget class="QWidget" name="download_prompt">
+       <property name="visible">
+        <bool>false</bool>
+       </property>
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QPushButton" name="start_download_button">
+          <property name="text">
+          <string>Download</string>
+         </property>
+        </widget>
+       </item>
+        <item>
+         <widget class="QPushButton" name="stop_download_button">
+          <property name="text">
+          <string>Stop</string>
+         </property>
+        </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="download_label">
+          <property name="text">
+           <string>The message is being downloaded.</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+
+  </widget>
+
+  <widget class="QMenuBar" name="menu_bar">
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_quit"/>
+   </widget>
+   <addaction name="menu_file"/>
+
+   <widget class="QMenu" name="menu_view">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="action_attachments_window"/>
+   </widget>
+   <addaction name="menu_view"/>
+  </widget>
+
+  <widget class="QStatusBar" name="status_bar"/>
+
+  <action name="action_quit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+
+  <action name="action_attachments_window">
+   <property name="text">
+    <string>Attachments Window</string>
+   </property>
+  </action>
+
+  <action name="action_download_message">
+   <property name="text">
+    <string>Download Message</string>
+   </property>
+  </action>
+ </widget>
+
+ <customwidgets>
+  <customwidget>
+   <class>widgets::ComboBox</class>
+   <extends>QWidget</extends>
+   <header>widgets/combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>widgets::MessageWidget</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/messagewidget.h</header>
+  </customwidget>
+ </customwidgets>
+</ui>

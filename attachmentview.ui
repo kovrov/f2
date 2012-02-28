@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>attachment_view</class>
+ <widget class="QWidget" name="attachment_view">
+  <layout class="QVBoxLayout">
+   <item>
+    <widget class="QListView" name="attachment_list">
+     <property name="uniformItemSizes">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
